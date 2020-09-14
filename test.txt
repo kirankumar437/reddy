@@ -1,0 +1,22 @@
+*** Settings ***
+Documentation
+...    Objective: TAG Test 1
+...
+
+Library          BuiltIn
+Library          SSHLibrary
+Library          Collections
+Default Tags     smoke_test
+Suite Setup      Example
+
+*** Keywords ***
+Example
+    # Check if Testcase is Relevant (should be skipped)
+    # -------------------------------------------------
+    ${result}=    Skip If Testcase Not Applicable
+    Run Keyword If    '${result}' == 'skip'    Skip Test
+
+*** Test Cases ***
+TAG_Test_1
+    Log  ===========> *** Test TAG_1 Running *** <===========
+    etc.
