@@ -1,19 +1,7 @@
-** Test Cases **
-Test 1
-  [Template]  Test Template
-  [Tags]  test  one
-  foo
-  12345
-  bar
+*** Test Cases ***
+| Test case 1
+| | [Tags] | run-once
+| | log | this is test case 1
 
-*** Keywords ***
-Skip Check
-  [Arguments]  ${var}
-
-  Run Keyword If  ${var} == 12345
-  ...  Skip Execution  I don’t like this string.
-
-Test Template
-  [Arguments]  ${var}
-
-  Skip Check  ${var}
+| Test case 2
+| | log | this is test case 2
